@@ -4,6 +4,16 @@ Give and receive kudos from your favorite app using `/kudos` 🎉
 
 This is the universal open source contribution recognition platform. Stop the hate. Spread the love.
 
+| Link | Description |
+| ---- | ----------- |
+| [GitHub Org](https://github.com/slash-kudos) | The GitHub org containing all the projects, documentation and code |
+| [kudos-site](https://github.com/slash-kudos/kudos-site) | The Kudos marketing website (slashkudos.com) repository. Built with Wordpress, hosted on SiteGround and routed by AWS Route 53. |
+| [kudos-web](https://github.com/slash-kudos/kudos-web) | The Kudos web app (app.slashkudos.com) repository. Built on AWS with React + TypeScript. |
+| [kudos-api](https://github.com/slash-kudos/kudos-api) | The Kudos API repository. Built on AWS using DynamoDB, AppSync GraphQL and Serverless Lambda REST APIs. |
+| [app.slashkudos.com](app.slashkudos.com) | The Kudos web app |
+| [slashkudos.com](slashkudos.com) | The Kudos marketing site |
+| [@slashkudos][Kudos Twitter] | The Kudos twitter account |
+
 ## How It Works
 
 ### Giving Kudos
