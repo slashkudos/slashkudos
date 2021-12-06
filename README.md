@@ -20,7 +20,9 @@ This is the universal open source contribution recognition platform. Stop the ha
 
 ### Giving Kudos
 
-Kudos will be integrated into the apps you already know and love, so no need to learn something new. In Discord, GitHub, Teams, and Slack where the /Kudos is installed, just type `/kudos @user your message here...` to give Kudos! Twitter works a bit differently - on Twitter just Tweet [@slashkudos][Kudos Twitter] where you would normally use `/Kudos`. So something like `@slashkudos @user your message here...`.
+Kudos will be integrated into the apps you already know and love, so no need to learn something new. In Discord, GitHub, Teams, and Slack where the /Kudos is installed, just type `/kudos @user your message here...` to give Kudos.
+
+Twitter works a bit differently - just Tweet [@slashkudos][Kudos Twitter] where you would normally use `/Kudos`. So something like `@slashkudos @user your message here...`.
 
 ### Exploring Kudos
 
