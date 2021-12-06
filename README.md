@@ -4,6 +4,8 @@ Give and receive kudos from your favorite app using `/kudos` 🎉
 
 This is the universal open source contribution recognition platform. Stop the hate. Spread the love.
 
+## Useful Links
+
 | Link | Description |
 | ---- | ----------- |
 | [slash-kudos](https://github.com/slash-kudos) | The GitHub org containing all the projects, documentation and code |
