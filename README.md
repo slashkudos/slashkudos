@@ -1,4 +1,4 @@
-slashkudos# Slash Kudos (/Kudos)
+# Slash Kudos (/Kudos)
 
 Give and receive kudos from your favorite app using `/kudos` 🎉
 
