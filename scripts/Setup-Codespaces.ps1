@@ -1,5 +1,7 @@
 #!/usr/bin/env pwsh
 
+gh auth login -h github.com
+
 gh repo clone slashkudos/kudos-api /workspaces/kudos-api
 & /workspaces/kudos-api/scripts/Update-DevContainer.ps1
 
