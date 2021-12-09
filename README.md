@@ -1,4 +1,4 @@
-# Slash Kudos (/Kudos)
+slashkudos# Slash Kudos (/Kudos)
 
 Give and receive kudos from your favorite app using `/kudos` 🎉
 
@@ -8,10 +8,10 @@ This is the main repository for /Kudos used for documentation, planning, and dis
 
 | Link | Description |
 | ---- | ----------- |
-| [slash-kudos](https://github.com/slash-kudos) | The GitHub org containing all the projects, documentation and code |
-| [slash-kudos/kudos-site](https://github.com/slash-kudos/kudos-site) | The Kudos marketing website (slashkudos.com) repository. Built with Wordpress, hosted on SiteGround and routed by AWS Route 53. |
-| [slash-kudos/kudos-web](https://github.com/slash-kudos/kudos-web) | The Kudos web app (app.slashkudos.com) repository. Built on AWS with React + TypeScript. |
-| [slash-kudos/kudos-api](https://github.com/slash-kudos/kudos-api) | The Kudos API repository. Built on AWS using DynamoDB, AppSync GraphQL and Serverless Lambda REST APIs. |
+| [slashkudos](https://github.com/slashkudos) | The GitHub org containing all the projects, documentation and code |
+| [slashkudos/kudos-site](https://github.com/slashkudos/kudos-site) | The Kudos marketing website (slashkudos.com) repository. Built with Wordpress, hosted on SiteGround and routed by AWS Route 53. |
+| [slashkudos/kudos-web](https://github.com/slashkudos/kudos-web) | The Kudos web app (app.slashkudos.com) repository. Built on AWS with React + TypeScript. |
+| [slashkudos/kudos-api](https://github.com/slashkudos/kudos-api) | The Kudos API repository. Built on AWS using DynamoDB, AppSync GraphQL and Serverless Lambda REST APIs. |
 | [slashkudos.com](https://slashkudos.com) | The Kudos marketing site |
 | [app.slashkudos.com](https://app.slashkudos.com) | The Kudos web app |
 | [@slashkudos][Kudos Twitter] | The Kudos twitter account |
@@ -48,7 +48,7 @@ I am planning on building integrations for giving kudos from these apps. If you 
 
 Features will be rolled out in a series of phases. At a high-level, we will focus on setting up the proper integrations to give and receive Kudos on the most popular apps first. Then we will focus on the exploration and reporting piece on app.slashkudos.com.
 
-See [The Slash Kudos Project](https://github.com/orgs/slash-kudos/projects/1/views/1) for a more in-depth plan.
+See [The Slash Kudos Project](https://github.com/orgs/slashkudos/projects/1/views/1) for a more in-depth plan.
 
 | # | Phase | Features | ETA |
 | :-: | ----- | -------- | ---
