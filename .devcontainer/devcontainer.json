@@ -29,7 +29,8 @@
 		"yzhang.markdown-all-in-one",
 		"aws-amplify.aws-amplify-vscode",
 		"graphql.vscode-graphql",
-		"kumar-harsh.graphql-for-vscode"
+		"kumar-harsh.graphql-for-vscode",
+		"vsls-contrib.codetour"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
