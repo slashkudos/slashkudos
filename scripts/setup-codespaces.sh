@@ -17,3 +17,6 @@ gh repo clone slashkudos/kudos-web /workspaces/kudos-web
 
 # Run repo specific setup scripts
 pwsh /workspaces/kudos-api/scripts/Update-DevContainer.ps1
+
+# Install other dev tools
+brew install awscurl
