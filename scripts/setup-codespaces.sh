@@ -1,6 +1,7 @@
 #!/bin/bash
 
 export GITHUB_TOKEN=$SLASHKUDOS_PAT
+echo 'export GITHUB_TOKEN=$SLASHKUDOS_PAT' >> ~/.bashrc
 
 # Auth will use GITHUB_TOKEN from Codespace
 gh auth login -h github.com
