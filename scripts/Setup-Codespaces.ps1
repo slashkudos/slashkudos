@@ -1,12 +1,28 @@
-#!/bin/bash
+#!/usr/bin/env pwsh
 
-if [ -z "$SLASHKUDOS_PAT" ]
-then
-    export GITHUB_TOKEN=$SLASHKUDOS_PAT
+<#
+    .SYNOPSIS
+    Clones all the repos, runs their setup scripts and sets up gh cli and other dev tools.
+
+    .DESCRIPTION
+    Clones all the repos, runs their setup scripts and sets up gh cli and other dev tools.
+#>
+
+[CmdletBinding()]
+Param()
+
+if($env:SLASHKUDOS_PAT)
+{
+    $env:GITHUB_TOKEN = $env:SLASHKUDOS_PAT
     echo 'export GITHUB_TOKEN=$SLASHKUDOS_PAT' >> ~/.bashrc
+
+    New-Item $profile -Type File -ErrorAction Ignore
+    echo '$env:GITHUB_TOKEN = $env:SLASHKUDOS_PAT' >> $profile
+}
 else
-    echo "WARNING: You must set Codespaces secret SLASHKUDOS_PAT"
-fi
+{
+    Write-Warning "You must set Codespaces secret SLASHKUDOS_PAT"
+}
 
 git config --global pull.rebase true
 
@@ -24,6 +40,7 @@ gh repo clone slashkudos/kudos-web /workspaces/kudos-web
 
 # Run repo specific setup scripts
 pwsh /workspaces/kudos-api/scripts/Setup-Codespaces.ps1
+pwsh /workspaces/kudos-twitter/scripts/Setup-Codespaces.ps1
 
 # Install other dev tools
 brew install awscurl

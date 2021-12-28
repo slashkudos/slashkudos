@@ -1,22 +1,25 @@
 {
-	"folders": [
-		{
-			"path": "/workspaces/slashkudos"
-		},
-		{
-			"path": "/workspaces/kudos-api"
-		},
-		{
-			"path": "/workspaces/kudos-site"
-		},
-		{
-			"path": "/workspaces/kudos-twitter"
-		},
-		{
-			"path": "/workspaces/kudos-web"
-		}
-	],
-	"settings": {
-		"editor.formatOnSave": true
-	}
+  "folders": [
+    {
+      "path": "/workspaces/slashkudos"
+    },
+    {
+      "path": "/workspaces/kudos-api"
+    },
+    {
+      "path": "/workspaces/kudos-site"
+    },
+    {
+      "path": "/workspaces/kudos-twitter"
+    },
+    {
+      "path": "/workspaces/kudos-web"
+    },
+    {
+      "path": "/workspaces/twitterdev-account-activity-dashboard"
+    }
+  ],
+  "settings": {
+    "editor.formatOnSave": true
+  }
 }
