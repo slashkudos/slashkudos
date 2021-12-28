@@ -16,5 +16,7 @@
 			"path": "/workspaces/kudos-web"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"editor.formatOnSave": true
+	}
 }
