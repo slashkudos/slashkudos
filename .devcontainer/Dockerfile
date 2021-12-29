@@ -4,7 +4,7 @@
 ARG VARIANT="buster"
 FROM mcr.microsoft.com/vscode/devcontainers/base:0-${VARIANT}
 
-RUN echo "Installing node"\
+RUN echo "Installing node" \
     && apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && curl -fsSL https://deb.nodesource.com/setup_17.x | bash - \
     && apt-get install -y --no-install-recommends nodejs
@@ -13,3 +13,11 @@ RUN echo "Installing aws cli" \
     && curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" \
     && unzip awscliv2.zip \
     && sudo ./aws/install
+
+RUN echo "Installng Ruby and RVM" \
+    && gpg --keyserver keys.openpgp.org --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB \
+    && curl -sSL https://get.rvm.io | bash -s stable --ruby
+
+RUN echo "Installing rubygems" \
+    && apt-get update && export DEBIAN_FRONTEND=noninteractive \
+    && apt-get install -y --no-install-recommends rubygems

@@ -16,7 +16,7 @@ if($env:SLASHKUDOS_PAT)
     $env:GITHUB_TOKEN = $env:SLASHKUDOS_PAT
     echo 'export GITHUB_TOKEN=$SLASHKUDOS_PAT' >> ~/.bashrc
 
-    New-Item $profile -Type File -ErrorAction Ignore
+    New-Item $profile -Type File -Force
     echo '$env:GITHUB_TOKEN = $env:SLASHKUDOS_PAT' >> $profile
 }
 else
@@ -44,3 +44,11 @@ pwsh /workspaces/kudos-twitter/scripts/Setup-Codespaces.ps1
 
 # Install other dev tools
 brew install awscurl
+
+# Ruby related configuration
+echo 'export GEM_HOME="$HOME/.gem"' >> ~/.bashrc
+echo 'PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"' >> ~/.bashrc
+echo '$env:GEM_HOME = "$env:HOME/.gem"' >> $profile
+echo '$env:PATH += ":$(ruby -e 'puts Gem.user_dir')/bin"' >> $profile
+$env:GEM_HOME = "$env:HOME/.gem"
+$env:PATH += ":$(ruby -e 'puts Gem.user_dir')/bin"
