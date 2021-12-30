@@ -47,7 +47,7 @@ brew install awscurl
 
 # Ruby related configuration
 echo 'export GEM_HOME="$HOME/.gem"' >> ~/.bashrc
-echo 'PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"' >> ~/.bashrc
+echo 'export PATH="$PATH:`ruby -e "puts Gem.user_dir"`/bin"' >> ~/.bashrc
 echo '$env:GEM_HOME = "$env:HOME/.gem"' >> $profile
 echo '$env:PATH += ":$(ruby -e "puts Gem.user_dir")/bin"' >> $profile
 $env:GEM_HOME = "$env:HOME/.gem"
