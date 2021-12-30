@@ -22,7 +22,7 @@ This is the main repository for /Kudos used for documentation, planning, and dis
 
 Kudos will be integrated into the apps you already know and love, so no need to learn something new. In Discord, GitHub, Teams, and Slack where the /Kudos is installed, just type `/kudos @user your message here...` to give Kudos.
 
-Twitter works a bit differently - just Tweet [@slashkudos][Kudos Twitter] where you would normally use `/Kudos`. So something like `@slashkudos @user your message here...`.
+Twitter works a bit differently - just Tweet [/@slashkudos][Kudos Twitter] where you would normally use `/Kudos`. So something like `/@slashkudos @philipgai_dev For creating me!`.
 
 ### Exploring Kudos
 
