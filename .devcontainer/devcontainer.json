@@ -30,7 +30,8 @@
 		"aws-amplify.aws-amplify-vscode",
 		"graphql.vscode-graphql",
 		"kumar-harsh.graphql-for-vscode",
-		"vsls-contrib.codetour"
+		"vsls-contrib.codetour",
+		"apollographql.vscode-apollo"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
