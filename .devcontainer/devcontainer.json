@@ -55,7 +55,7 @@
     "github-cli": "latest",
     "azure-cli": "latest",
     "homebrew": "latest",
-    "node": "latest",
+    "node": "lts/gallium",
     "powershell": "latest"
   }
 }
