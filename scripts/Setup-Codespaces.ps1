@@ -52,3 +52,5 @@ echo '$env:GEM_HOME = "$env:HOME/.gem"' >> $profile
 echo '$env:PATH += ":$(ruby -e "puts Gem.user_dir")/bin"' >> $profile
 $env:GEM_HOME = "$env:HOME/.gem"
 $env:PATH += ":$(ruby -e 'puts Gem.user_dir')/bin"
+
+sudo npm i -g @vercel/ncc@^0.33.1
