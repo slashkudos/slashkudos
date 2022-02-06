@@ -33,7 +33,8 @@
 	"kumar-harsh.graphql-for-vscode",
 	"redhat.vscode-yaml",
 	"vsls-contrib.codetour",
-	"yzhang.markdown-all-in-one"
+	"yzhang.markdown-all-in-one",
+	"ms-vscode.powershell"
 ],
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
