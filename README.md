@@ -1,17 +1,20 @@
-# Slash Kudos (/Kudos)
+# slashkudos
 
 Give and receive kudos from your favorite app using `/kudos` 🎉
 
-This is the main repository for /Kudos used for documentation, planning, and discussions.
+This is the main repository for slashkudos used for documentation, planning, and discussions.
 
 ## Useful Links
 
 | Link | Description |
 | ---- | ----------- |
-| [slashkudos](https://github.com/slashkudos) | The GitHub org containing all the projects, documentation and code |
-| [slashkudos/kudos-site](https://github.com/slashkudos/kudos-site) | The Kudos marketing website (slashkudos.com) repository. Built with Wordpress, hosted on SiteGround and routed by AWS Route 53. |
-| [slashkudos/kudos-web](https://github.com/slashkudos/kudos-web) | The Kudos web app (app.slashkudos.com) repository. Built on AWS with React + TypeScript. |
+| [slashkudos](https://github.com/slashkudos) | The GitHub org containing all the projects, documentation and code. |
+| [slashkudos/slashkudos](https://github.com/slashkudos/slashkudos) | The main repo that you can create a mono Codespace from. |
 | [slashkudos/kudos-api](https://github.com/slashkudos/kudos-api) | The Kudos API repository. Built on AWS using DynamoDB, AppSync GraphQL and Serverless Lambda REST APIs. |
+| [slashkudos/kudos-site](https://github.com/slashkudos/kudos-site) | The Kudos marketing website (slashkudos.com) repository. Built with Wordpress, hosted on SiteGround and routed by AWS Route 53. |
+| [slashkudos/kudos-twitter](https://github.com/slashkudos/kudos-twitter) | The Kudos Twitter integration. |
+| [slashkudos/kudos-web](https://github.com/slashkudos/kudos-web) | The Kudos web app (app.slashkudos.com) repository. Built on AWS with React + TypeScript. |
+| <hr/> | <hr/> |
 | [slashkudos.com](https://slashkudos.com) | The Kudos marketing site |
 | [app.slashkudos.com](https://app.slashkudos.com) | The Kudos web app |
 | [@slashkudos][Kudos Twitter] | The Kudos twitter account |
@@ -22,7 +25,7 @@ This is the main repository for /Kudos used for documentation, planning, and dis
 
 Kudos will be integrated into the apps you already know and love, so no need to learn something new. In Discord, GitHub, Teams, and Slack where the /Kudos is installed, just type `/kudos @user your message here...` to give Kudos.
 
-Twitter works a bit differently - just Tweet [/@slashkudos][Kudos Twitter] where you would normally use `/Kudos`. So something like `/@slashkudos @philipgai_dev For creating me!`.
+Twitter works a bit differently - just Tweet [@slashkudos][Kudos Twitter] where you would normally use `/Kudos`. So something like `@slashkudos @user your message here...`.
 
 ### Exploring Kudos
 
