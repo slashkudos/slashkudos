@@ -53,4 +53,8 @@ echo '$env:PATH += ":$(ruby -e "puts Gem.user_dir")/bin"' >> $profile
 $env:GEM_HOME = "$env:HOME/.gem"
 $env:PATH += ":$(ruby -e 'puts Gem.user_dir')/bin"
 
+# Java
+echo 'export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/bin/java' >> ~/.bashrc
+
+# Node
 sudo npm i -g @vercel/ncc@^0.33.1

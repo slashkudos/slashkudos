@@ -21,3 +21,9 @@ RUN echo "Installng Ruby and RVM" \
 RUN echo "Installing rubygems" \
     && apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get install -y --no-install-recommends rubygems
+
+# Keep this version in sync with ubuntu-latest
+# https://github.com/actions/virtual-environments/blob/main/images/linux/Ubuntu2004-Readme.md#java
+RUN echo "Installing Java" \
+    && apt-get update && export DEBIAN_FRONTEND=noninteractive \
+    && apt-get install -y --no-install-recommends openjdk-11-jdk
