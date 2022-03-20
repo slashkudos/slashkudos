@@ -11,16 +11,14 @@
 [CmdletBinding()]
 Param()
 
-if($env:SLASHKUDOS_PAT)
-{
+if ($env:SLASHKUDOS_PAT) {
     $env:GITHUB_TOKEN = $env:SLASHKUDOS_PAT
     echo 'export GITHUB_TOKEN=$SLASHKUDOS_PAT' >> ~/.bashrc
 
     New-Item $profile -Type File -Force
     echo '$env:GITHUB_TOKEN = $env:SLASHKUDOS_PAT' >> $profile
 }
-else
-{
+else {
     Write-Warning "You must set Codespaces secret SLASHKUDOS_PAT"
 }
 
@@ -58,3 +56,12 @@ echo 'export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/bin/java' >> ~/.bashrc
 
 # Node
 sudo npm i -g @vercel/ncc@^0.33.1
+
+echo '
+{
+  "powershell.powerShellAdditionalExePaths": [
+    { "exePath": "/usr/local/bin/pwsh", "versionName": "pwsh" }
+  ],
+  "powershell.powerShellDefaultVersion": "pwsh"
+}
+' > '/home/vscode/.vscode-remote/data/Machine/settings.json'
