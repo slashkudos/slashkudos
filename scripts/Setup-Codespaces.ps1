@@ -11,13 +11,17 @@
 [CmdletBinding()]
 Param()
 
+$ErrorActionPreference = "Stop"
+
 function Invoke-Setup {
+  New-Item $profile -Type File -Force
+
   # git
   Set-GitConfig
   Initialize-Repositories
 
   # Node and npm
-  Install-Node
+  Install-NodeVersion
   Set-Npmrc
   Install-OtherNpmPackages
 
@@ -33,15 +37,27 @@ function Invoke-Setup {
   # Required Ruby gem setup
   Install-Twirl
   Set-PowershellPath
+
+  Write-Host "Setup complete."
 }
 
-function Install-Node {
+function Install-NodeVersion {
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash; if (!$?) { exit 1 }
+  bash -c '
+  export NVM_DIR="/usr/local/share/nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
   nvm install lts/gallium
   nvm use lts/gallium
+  nvm ls
+  '
+  if (!$?) { exit 1 }
 }
 
 function Install-Amplify {
-  sudo npm install -g @aws-amplify/cli@7.6.22
+  Write-Host "Installing @aws-amplify/cli@7.6.22"
+  sudo npm install -g @aws-amplify/cli@7.6.22; if (!$?) { exit 1 }
 
   Write-Host "amplify version: " -NoNewLine
   amplify --version
@@ -51,7 +67,6 @@ function Install-Twirl {
   Write-Host "Installing twurl to help with twitter integration development..."
   # https://github.com/twitter/twurl
   gem install twurl
-  Write-Host "Done."
 }
 
 function Set-AWSProfile {
@@ -80,11 +95,16 @@ aws_secret_access_key = $env:AWS_SECRET_ACCESS_KEY
 function Initialize-Repositories {
   Write-Host "Cloning repos..."
   $env:GITHUB_TOKEN | gh auth login --with-token
-  gh repo clone slashkudos/kudos-api /workspaces/kudos-api; if (!$?) { exit 1 }
-  gh repo clone slashkudos/kudos-site /workspaces/kudos-site; if (!$?) { exit 1 }
-  gh repo clone slashkudos/kudos-twitter /workspaces/kudos-twitter; if (!$?) { exit 1 }
-  gh repo clone slashkudos/kudos-web /workspaces/kudos-web; if (!$?) { exit 1 }
-  Write-Host "Done."
+  $repoNames = @("slashkudos/kudos-api", "slashkudos/kudos-twitter", "slashkudos/kudos-web")
+
+  foreach ($repo in $repoNames) {
+    $workspacePath = "/workspaces/$repo".Replace('slashkudos/', '')
+    rm -rf $workspacePath
+
+    Write-Host "Cloning $repo into $workspacePath..."
+    gh repo clone "$repo" $workspacePath; if (!$?) { exit 1 }
+  }
+
 }
 
 function Set-Npmrc {
@@ -95,13 +115,11 @@ email=$(git config --get user.email)
 @slashkudos:registry=https://npm.pkg.github.com
 //npm.pkg.github.com/:_authToken=$env:GITHUB_TOKEN
 "@ > ~/.npmrc
-  Write-Host "Done."
 }
 
 function Install-AwsCurl {
   Write-Host "Installing awscurl..."
-  brew install awscurl
-  Write-Host "Done."
+  brew install awscurl || brew reinstall awscurl
 }
 
 function Set-GitConfig {
@@ -116,19 +134,16 @@ function Set-RubyPaths {
   Write-Output '$env:PATH += ":$(ruby -e "puts Gem.user_dir")/bin"' >> $profile
   $env:GEM_HOME = "$env:HOME/.gem"
   $env:PATH += ":$(ruby -e 'puts Gem.user_dir')/bin"
-  Write-Host "Done."
 }
 
 function Set-JavaPaths {
   Write-Host "Setting JAVA_HOME path..."
   Write-Output 'export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/bin/java' >> ~/.bashrc
-  Write-Host "Done."
 }
 
 function Install-OtherNpmPackages {
   Write-Host "Installing global npm packages..."
   sudo npm i -g @vercel/ncc@^0.33.1
-  Write-Host "Done."
 }
 
 function Set-PowershellPath {
