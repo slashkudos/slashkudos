@@ -59,5 +59,17 @@
     "homebrew": "latest",
     "node": "lts/gallium",
     "powershell": "latest"
+  },
+
+  "codespaces": {
+    "repositories": [
+      {
+        "name": "slashkudos/*",
+        "permissions": {
+          "contents": "write",
+          "pull_requests": "write"
+        }
+      }
+    ]
   }
 }
