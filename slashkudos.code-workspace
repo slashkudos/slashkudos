@@ -1,16 +1,19 @@
 {
   "folders": [
     {
-      "path": "/workspaces/slashkudos"
+      "path": "/workspaces/kudos-api"
     },
     {
-      "path": "/workspaces/kudos-api"
+      "path": "/workspaces/kudos-github"
     },
     {
       "path": "/workspaces/kudos-twitter"
     },
     {
       "path": "/workspaces/kudos-web"
+    },
+    {
+      "path": "/workspaces/slashkudos"
     }
   ],
   "settings": {
