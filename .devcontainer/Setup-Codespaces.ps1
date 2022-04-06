@@ -31,6 +31,7 @@ function Invoke-Setup {
   Install-Amplify
   # Needed for amplify mock
   Set-JavaPaths
+  Import-AmplifyApplications
 
   # Other
   Set-RubyPaths
@@ -156,6 +157,58 @@ function Set-PowershellPath {
   "powershell.powerShellDefaultVersion": "pwsh"
 }
 ' > '/home/vscode/.vscode-remote/data/Machine/settings.json'
+}
+
+function Import-AmplifyApplications {
+  $amplifyApps = @(
+    @{
+      "name"             = "kudos-api";
+      "workingDirectory" = "/workspaces/kudos-api";
+      "appId"            = "d5u222qsuh3lu";
+      "envName"          = "dev";
+    },
+    @{
+      "name"             = "kudos-api";
+      "workingDirectory" = "/workspaces/kudos-api";
+      "appId"            = "d5u222qsuh3lu";
+      "envName"          = "prod";
+      "addEnv"           = $true
+    },
+    @{
+      "name"             = "kudos-twitter";
+      "workingDirectory" = "/workspaces/kudos-twitter";
+      "appId"            = "d2uh7hyid0jaxm";
+      "envName"          = "prod";
+    },
+    @{
+      "name"             = "kudos-web";
+      "workingDirectory" = "/workspaces/kudos-web";
+      "appId"            = "d1i50fbkdoxw25";
+      "envName"          = "dev";
+    },
+    @{
+      "name"             = "kudos-web";
+      "workingDirectory" = "/workspaces/kudos-web";
+      "appId"            = "d1i50fbkdoxw25";
+      "envName"          = "prod";
+      "addEnv"           = $true
+    }
+  )
+
+  foreach ($app in $amplifyApps) {
+    Write-Host "Importing $($app.name) $($app.envName)..."
+    Set-Location "$($app.workingDirectory)"
+    $workingDirectory = $(Get-Location).Path
+    Write-Host "Working directory: $workingDirectory"
+    if ($app.addEnv) {
+      amplify env checkout "$($app.envName)" --yes
+    }
+    else {
+      amplify pull --appId "$($app.appId)" --envName "$($app.envName)" --yes
+    }
+    if (!$?) { exit 1 }
+    Set-Location -
+  }
 }
 
 Invoke-Setup
