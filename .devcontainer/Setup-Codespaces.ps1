@@ -99,7 +99,7 @@ aws_secret_access_key = $env:AWS_SECRET_ACCESS_KEY
 function Initialize-Repositories {
   Write-Host "Cloning repos..."
   $env:GITHUB_TOKEN | gh auth login --with-token
-  $repoNames = @("slashkudos/kudos-api", "slashkudos/kudos-twitter", "slashkudos/kudos-web", "slashkudos/kudos-github")
+  $repoNames = @("slashkudos/kudos-api", "slashkudos/kudos-twitter", "slashkudos/kudos-web", "slashkudos/kudos-github", "slashkudos/.github")
 
   foreach ($repo in $repoNames) {
     $workspacePath = "/workspaces/$repo".Replace('slashkudos/', '')
@@ -231,6 +231,6 @@ function Install-NpmProjectPackages {
   }
 }
 
-if(!$Import) {
+if (!$Import) {
   Invoke-Setup
 }
