@@ -9,7 +9,9 @@
 #>
 
 [CmdletBinding()]
-Param()
+Param(
+  [switch]$Import
+)
 
 $ErrorActionPreference = "Stop"
 
@@ -24,6 +26,7 @@ function Invoke-Setup {
   Install-NodeVersion
   Set-Npmrc
   Install-OtherNpmPackages
+  Install-NpmProjectPackages
 
   # AWS
   Set-AWSProfile
@@ -211,4 +214,23 @@ function Import-AmplifyApplications {
   }
 }
 
-Invoke-Setup
+function Install-NpmProjectPackages {
+  $projectDirectories = @(
+    "/workspaces/kudos-api/clients/typescript",
+    "/workspaces/kudos-api/scripts/SyncDynamoDB",
+    "/workspaces/kudos-twitter",
+    "/workspaces/kudos-twitter/amplify/backend/function/twitterwebhookshandler/lib"
+    "/workspaces/kudos-web",
+  )
+  foreach ($dir in $projectDirectories) {
+    Write-Host "Invoking npm install in $dir..."
+    Set-Location "$dir"
+    npm install
+    if (!$?) { exit 1 }
+    Set-Location -
+  }
+}
+
+if(!$Import) {
+  Invoke-Setup
+}
