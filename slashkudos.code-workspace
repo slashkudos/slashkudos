@@ -22,6 +22,9 @@
   "settings": {
     "editor.formatOnSave": true,
     "editor.tabSize": 2,
+    "[typescriptreact]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
   },
   "extensions": {
     "unwantedRecommendations": ["ms-dotnettools.csharp", "samirat.csharp-test-adapter"]
