@@ -2,10 +2,7 @@
 
 <#
     .SYNOPSIS
-    Sets up gh cli and other dev tools.
-
-    .DESCRIPTION
-    Sets up gh cli and other dev tools.
+    Sets up all of the slashkudos repos and installs all the needed tools.
 #>
 
 [CmdletBinding()]
@@ -196,6 +193,12 @@ function Import-AmplifyApplications {
       "appId"            = "d1i50fbkdoxw25";
       "envName"          = "prod";
       "addEnv"           = $true
+    },
+    @{
+      "name"             = "kudos-github";
+      "workingDirectory" = "/workspaces/kudos-github";
+      "appId"            = "d2rgnllrb072gz";
+      "envName"          = "prod";
     }
   )
 
