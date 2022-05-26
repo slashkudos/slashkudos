@@ -67,8 +67,9 @@
         "name": "slashkudos/*",
         "permissions": {
           "contents": "write",
+          "packages": "read",
           "pull_requests": "write",
-          "packages": "read"
+          "workflows": "write"
         }
       }
     ]
