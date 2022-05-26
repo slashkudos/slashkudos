@@ -2,4 +2,7 @@
 
 This is the official repository for slashkudos used for technical documentation, planning, and discussions.
 
-See https://github.com/slashkudos for the slashkudos GitHub landing page.
+See the [slashkudos org] for the GitHub landing page.
+
+<!-- Link -->
+[slashkudos org]: https://github.com/slashkudos
