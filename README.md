@@ -1,8 +1,8 @@
-# slashkudos
+# slashkudos: The official open source kudos platform
 
-This is the official repository for slashkudos used for technical documentation, planning, and discussions.
+This repository is used for technical documentation, planning, and discussions.
 
-See the [slashkudos org] for the GitHub landing page.
+For the GitHub landing page, visit the [slashkudos org].
 
 <!-- Link -->
 [slashkudos org]: https://github.com/slashkudos
