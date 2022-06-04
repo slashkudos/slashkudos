@@ -28,6 +28,9 @@
     "[typescriptreact]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
+    "powershell.powerShellAdditionalExePaths": {
+      "pwsh": "/usr/local/bin/pwsh"
+    },
   },
   "extensions": {
     "unwantedRecommendations": ["ms-dotnettools.csharp", "samirat.csharp-test-adapter"]
