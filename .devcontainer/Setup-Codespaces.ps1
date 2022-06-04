@@ -222,8 +222,9 @@ function Install-NpmProjectPackages {
   $projectDirectories = @(
     "/workspaces/kudos-api/clients/typescript",
     "/workspaces/kudos-api/scripts/SyncDynamoDB",
+    "/workspaces/kudos-github/amplify/backend/function/githubwebhookshandler/lib",
     "/workspaces/kudos-twitter",
-    "/workspaces/kudos-twitter/amplify/backend/function/twitterwebhookshandler/lib"
+    "/workspaces/kudos-twitter/amplify/backend/function/twitterwebhookshandler/lib",
     "/workspaces/kudos-web"
   )
   foreach ($dir in $projectDirectories) {
@@ -242,6 +243,18 @@ function Set-EnvironmentVariables {
 KUDOS_GRAPHQL_API_URL=https://graphqlapi-dev.slashkudos.com/graphql
 KUDOS_GRAPHQL_API_KEY=$env:KUDOS_GRAPHQL_API_KEY
 " > $path
+
+  Write-Host "Generating GitHub probot app .env file for testing..."
+  Write-Output "# AUTO GENERATED FILE: For testing using the develop app ONLY
+WEBHOOK_PROXY_URL=https://smee.io/aQaveSYLypVlBWg
+APP_ID=207582
+GITHUB_CLIENT_ID=Iv1.00ef6d8c217f4c5d
+PRIVATE_KEY=`"$env:GH_APP_PRIVATE_SSH_KEY_DEV`"
+WEBHOOK_SECRET=$env:GH_APP_WEBHOOK_SECRET_DEV
+GITHUB_CLIENT_SECRET=$env:GH_APP_CLIENT_SECRET_DEV
+" > /workspaces/kudos-github/amplify/backend/function/githubwebhookshandler/lib/.env
+  Write-Host "Done."
+
 }
 
 if (!$Import) {
