@@ -222,7 +222,7 @@ function Install-NpmProjectPackages {
   $projectDirectories = @(
     "/workspaces/kudos-api/clients/typescript",
     "/workspaces/kudos-api/scripts/SyncDynamoDB",
-    "/workspaces/kudos-github/amplify/backend/function/githubwebhookshandler/lib",
+    "/workspaces/kudos-github/amplify/backend/function/githubwebhookshandler",
     "/workspaces/kudos-twitter",
     "/workspaces/kudos-twitter/amplify/backend/function/twitterwebhookshandler/lib",
     "/workspaces/kudos-web"
@@ -252,7 +252,9 @@ GITHUB_CLIENT_ID=Iv1.00ef6d8c217f4c5d
 PRIVATE_KEY=`"$env:GH_APP_PRIVATE_SSH_KEY_DEV`"
 WEBHOOK_SECRET=$env:GH_APP_WEBHOOK_SECRET_DEV
 GITHUB_CLIENT_SECRET=$env:GH_APP_CLIENT_SECRET_DEV
-" > /workspaces/kudos-github/amplify/backend/function/githubwebhookshandler/lib/.env
+KUDOS_GRAPHQL_API_URL=https://graphqlapi-dev.slashkudos.com/graphql
+KUDOS_GRAPHQL_API_KEY=$env:KUDOS_GRAPHQL_API_KEY
+" > /workspaces/kudos-github/amplify/backend/function/githubwebhookshandler/.env
   Write-Host "Done."
 
 }
